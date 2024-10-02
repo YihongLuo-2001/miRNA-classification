@@ -1,5 +1,7 @@
 # README
 
+> We have run the model on CentOS Linux release 7.9.2009
+
 ## Table of Contents
 - [Introduction](#introduction)
 - [Project Structure](#project-structure)
@@ -18,66 +20,74 @@ This sites provide the information associated with the following paper:
 
 ```shell
 miRNA-classification/
-├── animal_plant  # Binary Classification
-│   ├── best_decision_tree_model.joblib  # Decision Tree(DT) Model file
-│   ├── best_random_forest_model_5.z01  # A part of Random Forest(RF) Model file
-│   ├── best_random_forest_model_5.z02  # A part of Random Forest(RF) Model file
-│   ├── best_random_forest_model_5.z03  # A part of Random Forest(RF) Model file
-│   ├── best_random_forest_model_5.zip  # A part of Random Forest(RF) Model file
-│   ├── cnn_test.py  # Testing Convolutional Neural Networks(CNN) Model
-│   ├── cnn_train.py  # Training Convolutional Neural Networks(CNN) Model
-│   ├── d_tree.py  # Training and testing Decision Tree(DT) Model
-│   ├── model_cnn.pkl  # Convolutional Neural Networks(CNN) Model file
-│   ├── model_nn.pkl  # Neural Networks(NN) Model file
-│   ├── nn_test.py  # Testing Neural Networks(NN) Model
-│   ├── nn_train.py  # Training Neural Networks(NN) Model
-│   ├── rf2.py  # Training and testing Random Forest(RF) Model
-│   ├── SVM_4.py  # Training and testing Support Vector Machine(SVM) Model
-│   └── svm_model_6.joblib  # Support Vector Machine(SVM) Model file
-├── animal_plant_dataset  # Dataset(Binary Classification)
-│   ├── Animal_miRNA.txt  # Animal miRNA Raw data
-│   ├── one-hot.py  # One-hot encoding
-│   ├── one-hot.txt  # One-hot encoded data
-│   ├── Plant_miRNA.txt  # Plant miRNA Raw data
-│   ├── rna_test.txt  # Testing set
-│   └── rna_train.txt  # Training set
+├── bin
+│   ├── animal_plant  # Binary Classification
+│   │   ├── cnn_test.py  # Testing Convolutional Neural Networks(CNN) Model
+│   │   ├── cnn_train.py  # Training Convolutional Neural Networks(CNN) Model
+│   │   ├── d_tree.py  # Training and testing Decision Tree(DT) Model
+│   │   ├── nn_test.py  # Testing Neural Networks(NN) Model
+│   │   ├── nn_train.py  # Training Neural Networks(NN) Model
+│   │   ├── rf2.py  # Training and testing Random Forest(RF) Model
+│   │   └── SVM_4.py  # Training and testing Support Vector Machine(SVM) Model
+│   ├── data_processing
+│   │   ├── binary_one-hot.py  # One-hot encoding(Binary Classification)
+│   │   ├── dataset_split.py  # Split the dataset into training set and test set
+│   │   ├── families_filter_0.py #  Filter data
+│   │   ├── families_filter_1.py #  Filter data
+│   │   ├── families_making_dic.py # Organize data labels
+│   │   └── families_one-hot.py  # One-hot encoding(miRNA Families Classification)
+│   ├── explanation  # Analyze Random Forest Model
+│   │   ├── make_svg.sh  # Convert the dot file into a visualized SVG file.
+│   │   ├── random_forests.py  # Compute feature importances, analyze the path in the model and convert the model into dot files
+│   │   └── svm_hyperplane_function.py  # Print hyperplane function of SVM model
+│   └── families_20  # miRNA Families Classification
+│       ├── cnn_test_families.py  # Testing Convolutional Neural Networks(CNN) Model
+│       ├── cnn_train_families.py # Training Convolutional Neural Networks(CNN) Model
+│       ├── d_tree.py  # Training and testing Decision Tree(DT) Model
+│       ├── nn_test_families.py  # Testing Neural Networks(NN) Model
+│       ├── nn_train_families.py  # Training Neural Networks(NN) Model
+│       ├── rf2.py  # Training and testing Random Forest(RF) Model
+│       └── SVM_4.py  # Training and testing Support Vector Machine(SVM) Model
 ├── checking_environment.py  # Checking PyTorch and sk-learn packages
-├── explaination  # Analyze Random Forest Model
-│   ├── make_svg.sh  # Convert the dot file into a visualized SVG file.
-│   ├── position.tsv  # Sum the feature importance of all decision criteria.
-│   ├── random_forests.py  # Compute feature importances, analyze the path in the model and convert the model into dot files
-│   ├── svg  # Visualized SVG file
-│   ├── svm_hyperplane_function.py  # Print hyperplane function of SVM
-│   ├── trees  # dot files of the Random Forest model 
-│   └── trees.tsv  # The feature importance of each node in the 1-4 layers. 
-├── families_20  # miRNA Families Classification
-│   ├── cnn_result.txt  # Result of the Convolutional Neural Networks(CNN) Model
-│   ├── cnn_test.py  # Testing Convolutional Neural Networks(CNN) Model
-│   ├── cnn_train_families.py  # Training Convolutional Neural Networks(CNN) Model
-│   ├── decision_tree_results_families.txt  # Result of the Decision Tree(DT) Model
-│   ├── d_tree.py  # Training and testing Decision Tree(DT) Model
-│   ├── nn_result.txt  # Result of the Neural Networks(NN) Model
-│   ├── nn_test.py  # Testing Neural Networks(NN) Model
-│   ├── nn_train_families.py  # Training Neural Networks(NN) Model
-│   ├── random_forest_results_families.txt  # Result of the Random Forest(RF) Model
-│   ├── rf2.py  # Training and testing Random Forest(RF) Model
-│   ├── SVM_4.py  # Training and testing Support Vector Machine(SVM) Model
-│   └── SVM_report_6_families.txt  # Result of the Support Vector Machine(SVM) Model
-├── families_20_dataset  # Dataset(miRNA Families Classification)
-│   ├── Animal_miRNA.txt # Animal miRNA Raw data
-│   ├── dataset_split.py  # Split the dataset into training set and test set
-│   ├── family_filter.py #  Filter data
-│   ├── making_dic.py  # Organize data labels
-│   ├── one-hot.py  # One-hot encoding
-│   ├── one-hot-set.py #  Filter data
-│   ├── Plant_miRNA.txt # Plant miRNA Raw data
-│   ├── set-families_count.csv  # Data label reference table
-│   ├── set-families_dic.csv  # Data label reference table
-│   ├── set-one-hot-families-filtered.txt  # Filtered one-hot data
-│   ├── set-one-hot-families.txt  # Raw one-hot data
-│   ├── set_test_families-filtered.txt  # Testing set
-│   └── set_train_families-filtered.txt  # Training set
-└── README.md
+├── data
+│   ├── animal_plant_dataset  # Dataset(Binary Classification)
+│   │   ├── Animal_miRNA.txt  # Animal miRNA Raw data
+│   │   ├── one-hot.txt  # One-hot encoded data
+│   │   ├── Plant_miRNA.txt  # Plant miRNA Raw data
+│   │   ├── rna_test.txt  # Testing set
+│   │   └── rna_train.txt  # Training set
+│   └── families_20_dataset  # Dataset(miRNA Families Classification)
+│       ├── Animal_miRNA.txt # Animal miRNA Raw data
+│       ├── one-hot-families.txt # Raw one-hot data
+│       ├── Plant_miRNA.txt  # Plant miRNA Raw data
+│       ├── set-families_count.csv  # Data label reference table
+│       ├── set-families_dic.csv  # Data label reference table
+│       ├── set-one-hot-families-filtered.txt  # Filtered one-hot data
+│       ├── set-one-hot-families.txt  # Raw one-hot data
+│       ├── set_test_families-filtered.txt  # Testing set
+│       └── set_train_families-filtered.txt  # Training set
+├── models_results
+│   ├── animal_plant  # models and results(Binary Classification)
+│   │   ├── best_decision_tree_model.joblib  # Decision Tree(DT) Model file
+│   │   ├── best_random_forest_model_5.z01  # A part of Random Forest(RF) Model file
+│   │   ├── best_random_forest_model_5.z02  # A part of Random Forest(RF) Model file
+│   │   ├── best_random_forest_model_5.z03  # A part of Random Forest(RF) Model file
+│   │   ├── best_random_forest_model_5.zipp  # A part of Random Forest(RF) Model file
+│   │   ├── model_cnn.pkl  # Convolutional Neural Networks(CNN) Model file
+│   │   ├── model_nn.pkl  # Neural Networks(NN) Model file
+│   │   └── svm_model_6.joblib  # Support Vector Machine(SVM) Model file
+│   ├── explanation  # models and results(Analyze Random Forest Model)
+│   │   ├── position.tsv  # Sum the feature importance of all decision criteria.
+│   │   ├── trees_dot/  # dot files of the Random Forest model 
+│   │   ├── trees_svg/  # Visualized SVG file
+│   │   └── trees.tsv  # The feature importance of each node in the 1-4 layers. 
+│   └── families_20  # models and results(miRNA Families Classification)
+│       ├── best_decision_tree_model_families.joblib  # Decision Tree(DT) Model file
+│       ├── best_random_forest_model_families.zip  # Random Forest(RF) Model file
+│       ├── model_cnn_families.pkl  # Convolutional Neural Networks(CNN) Model file
+│       ├── model_nn_families.pkl  # Neural Networks(NN) Model file
+│       └── svm_model_6_families.joblib  # Support Vector Machine(SVM) Model file
+└── README.md  # README file
 
 ```
 
@@ -185,11 +195,14 @@ python checking_environment.py  # check pytorch and sk-learn
 Unzip large file
 
 ```shell
-cd animal_plant/
+cd models_results/animal_plant/
 cat best_random_forest_model_5.z* > best_random_forest_model_5_total.zip
 unzip best_random_forest_model_5_total.zip
 md5sum best_random_forest_model_5.joblib  # md5: f0708dbf083fb27145d7e7f06b8d4d06
-cd ..
+cd ../families_20/
+unzip best_random_forest_model_families.zip
+md5sum best_random_forest_model_families.joblib  # md5: b3f221c4d5c0b50eb8d87ef44cbeebb7
+cd ../..
 
 ```
 
@@ -200,15 +213,14 @@ cd ..
 Dataset Processing
 
 ```shell
-cd animal_plant_dataset/
-python one-hot.py
-cd ../families_20_dataset/
-python one-hot.py 
-python one-hot-set.py 
-python making_dic.py 
-python family_filter.py 
+cd bin/data_processing/
+python python binary_one-hot.py
+python families_one-hot.py 
+python families_filter_0.py
+python families_making_dic.py 
+python families_filter_1.py
 python dataset_split.py 
-cd ..
+cd ../..
 
 ```
 
@@ -217,15 +229,15 @@ cd ..
 miRNA Families Classification Model training
 
 ```shell
-cd families_20/
+cd bin/families_20/
 python d_tree.py
 python cnn_train_families.py
-python cnn_test.py
+python cnn_test_families.py
 python nn_train_families.py
-python nn_test.py
+python nn_test_families.py
 python rf2.py  # It may take a lot of time. You can adjust the threads in the code manually (Default 20 threads).
 python SVM_4.py
-cd ..
+cd ../..
 
 ```
 
@@ -234,7 +246,7 @@ cd ..
 Binary Classification Model training
 
 ```shell
-cd animal_plant/
+cd bin/animal_plant/
 python cnn_train.py
 python cnn_test.py
 python nn_train.py
@@ -242,7 +254,7 @@ python nn_test.py
 python d_tree.py  # It may take a lot of time. You can adjust the threads in the code manually (Default 20 threads).
 python rf2.py  # It may take a lot of time. You can adjust the threads in the code manually (Default 20 threads).
 python SVM_4.py  # It may take a lot of time. You can adjust the threads in the code manually (Default 20 threads).
-cd ..
+cd ../..
 
 ```
 
@@ -251,10 +263,11 @@ cd ..
 Analyze Random Forest Model
 
 ```shell
-cd explaination/
+cd bin/explanation/
 python svm_hyperplane_function.py
 python random_forests.py 
 bash make_svg.sh
+cd ../..
 
 ```
 
