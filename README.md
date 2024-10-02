@@ -184,7 +184,7 @@ pip install torchvision==0.13.1+cu113 -f https://download.pytorch.org/whl/torch_
 Git clone and check python package
 
 ```shell
-git clone https://github.com/YihongLuo-2001/miRNA-classification.git  # It may take a lot of time.
+git clone https://github.com/YihongLuo-2001/miRNA-classification.git  # It may take a lot of time. You can also download it manually.
 cd miRNA-classification/
 python checking_environment.py  # check pytorch and sk-learn
 
