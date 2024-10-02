@@ -267,7 +267,7 @@ cd bin/explanation/
 python svm_hyperplane_function.py
 python random_forests.py 
 bash make_svg.sh
-cd ../..
+cd ../../models_results/explanation/trees_svg/  # Svg files
 
 ```
 
