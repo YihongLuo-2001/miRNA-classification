@@ -1,0 +1,270 @@
+# README
+
+## Table of Contents
+- [Introduction](#introduction)
+- [Project Structure](#project-structure)
+- [Environment Installation](#environment-installation)
+- [Usage](#usage)
+- [Contact](#contact)
+## Introduction
+
+This sites provide the information associated with the following paper: 
+
+> Comparison of five machine learning models on the effectiveness of plant and animal miRNA classification
+
+
+
+## Project Structure
+
+```shell
+miRNA-classification/
+├── animal_plant  # Binary Classification
+│   ├── best_decision_tree_model.joblib  # Decision Tree(DT) Model file
+│   ├── best_random_forest_model_5.z01  # A part of Random Forest(RF) Model file
+│   ├── best_random_forest_model_5.z02  # A part of Random Forest(RF) Model file
+│   ├── best_random_forest_model_5.z03  # A part of Random Forest(RF) Model file
+│   ├── best_random_forest_model_5.zip  # A part of Random Forest(RF) Model file
+│   ├── cnn_test.py  # Testing Convolutional Neural Networks(CNN) Model
+│   ├── cnn_train.py  # Training Convolutional Neural Networks(CNN) Model
+│   ├── d_tree.py  # Training and testing Decision Tree(DT) Model
+│   ├── model_cnn.pkl  # Convolutional Neural Networks(CNN) Model file
+│   ├── model_nn.pkl  # Neural Networks(NN) Model file
+│   ├── nn_test.py  # Testing Neural Networks(NN) Model
+│   ├── nn_train.py  # Training Neural Networks(NN) Model
+│   ├── rf2.py  # Training and testing Random Forest(RF) Model
+│   ├── SVM_4.py  # Training and testing Support Vector Machine(SVM) Model
+│   └── svm_model_6.joblib  # Support Vector Machine(SVM) Model file
+├── animal_plant_dataset  # Dataset(Binary Classification)
+│   ├── Animal_miRNA.txt  # Animal miRNA Raw data
+│   ├── one-hot.py  # One-hot encoding
+│   ├── one-hot.txt  # One-hot encoded data
+│   ├── Plant_miRNA.txt  # Plant miRNA Raw data
+│   ├── rna_test.txt  # Testing set
+│   └── rna_train.txt  # Training set
+├── checking_environment.py  # Checking PyTorch and sk-learn packages
+├── explaination  # Analyze Random Forest Model
+│   ├── make_svg.sh  # Convert the dot file into a visualized SVG file.
+│   ├── position.tsv  # Sum the feature importance of all decision criteria.
+│   ├── random_forests.py  # Compute feature importances, analyze the path in the model and convert the model into dot files
+│   ├── svg  # Visualized SVG file
+│   ├── svm_hyperplane_function.py  # Print hyperplane function of SVM
+│   ├── trees  # dot files of the Random Forest model 
+│   └── trees.tsv  # The feature importance of each node in the 1-4 layers. 
+├── families_20  # miRNA Families Classification
+│   ├── cnn_result.txt  # Result of the Convolutional Neural Networks(CNN) Model
+│   ├── cnn_test.py  # Testing Convolutional Neural Networks(CNN) Model
+│   ├── cnn_train_families.py  # Training Convolutional Neural Networks(CNN) Model
+│   ├── decision_tree_results_families.txt  # Result of the Decision Tree(DT) Model
+│   ├── d_tree.py  # Training and testing Decision Tree(DT) Model
+│   ├── nn_result.txt  # Result of the Neural Networks(NN) Model
+│   ├── nn_test.py  # Testing Neural Networks(NN) Model
+│   ├── nn_train_families.py  # Training Neural Networks(NN) Model
+│   ├── random_forest_results_families.txt  # Result of the Random Forest(RF) Model
+│   ├── rf2.py  # Training and testing Random Forest(RF) Model
+│   ├── SVM_4.py  # Training and testing Support Vector Machine(SVM) Model
+│   └── SVM_report_6_families.txt  # Result of the Support Vector Machine(SVM) Model
+├── families_20_dataset  # Dataset(miRNA Families Classification)
+│   ├── Animal_miRNA.txt # Animal miRNA Raw data
+│   ├── dataset_split.py  # Split the dataset into training set and test set
+│   ├── family_filter.py #  Filter data
+│   ├── making_dic.py  # Organize data labels
+│   ├── one-hot.py  # One-hot encoding
+│   ├── one-hot-set.py #  Filter data
+│   ├── Plant_miRNA.txt # Plant miRNA Raw data
+│   ├── set-families_count.csv  # Data label reference table
+│   ├── set-families_dic.csv  # Data label reference table
+│   ├── set-one-hot-families-filtered.txt  # Filtered one-hot data
+│   ├── set-one-hot-families.txt  # Raw one-hot data
+│   ├── set_test_families-filtered.txt  # Testing set
+│   └── set_train_families-filtered.txt  # Training set
+└── README.md
+
+```
+
+
+
+## Environment Installation
+
+Create a conda environment
+
+```shell
+conda create --name mirna python=3.8 -y
+conda activate mirna
+
+```
+
+
+
+Use conda to install.
+
+```shell
+conda install -c conda-forge git -y
+conda install -c conda-forge graphviz -y
+conda install -c conda-forge unzip -y
+
+```
+
+
+
+Use pip to install.
+
+```shell
+pip install -i https://pypi.tuna.tsinghua.edu.cn/simple scikit-learn==1.3.2
+
+```
+
+
+
+Check CUDA version and graphics cards
+
+> A graphics card with more than 4096 MB of memory is required.
+>
+> Taking NVIDIA graphics cards as an example.
+
+```shell
+nvidia-smi
+
+```
+
+e.g. The  CUDA Version is 11.4, memory is 24268 MB
+
+```shell
++-----------------------------------------------------------------------------+
+| NVIDIA-SMI 470.82.01    Driver Version: 470.82.01    CUDA Version: 11.4     |
+|-------------------------------+----------------------+----------------------+
+| GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
+|                               |                      |               MIG M. |
+|===============================+======================+======================|
+|   0  NVIDIA GeForce ...  Off  | 00000000:4B:00.0 Off |                  N/A |
+| 39%   29C    P8    29W / 350W |      0MiB / 24268MiB |      0%      Default |
+|                               |                      |                  N/A |
++-------------------------------+----------------------+----------------------+
+|   1  NVIDIA GeForce ...  Off  | 00000000:CA:00.0 Off |                  N/A |
+| 41%   26C    P8    20W / 350W |      0MiB / 24268MiB |      0%      Default |
+|                               |                      |                  N/A |
++-------------------------------+----------------------+----------------------+
+                                                                               
++-----------------------------------------------------------------------------+
+| Processes:                                                                  |
+|  GPU   GI   CI        PID   Type   Process name                  GPU Memory |
+|        ID   ID                                                   Usage      |
+|=============================================================================|
+|  No running processes found                                                 |
++-----------------------------------------------------------------------------+
+```
+
+
+
+Install PyTorch according to the CUDA version
+
+> Visit the URL 'https://download.pytorch.org/whl/torch_stable.html' to find the appropriate package.
+
+```shell
+# pip install torch==X.XX.x+cuXXX -f https://download.pytorch.org/whl/torch_stable.html
+# pip install torchvision==X.XX.x+cuXXX -f https://download.pytorch.org/whl/torch_stable.html
+# e.g. If your CUDA version ≥ 11.3, you can execute the following command line.
+pip install torch==1.12.1+cu113 -f https://download.pytorch.org/whl/torch_stable.html
+pip install torchvision==0.13.1+cu113 -f https://download.pytorch.org/whl/torch_stable.html
+
+```
+
+
+
+Git clone and check python package
+
+```shell
+git clone https://github.com/YihongLuo-2001/miRNA-classification.git  # It may take a lot of time.
+cd miRNA-classification/
+python checking_environment.py  # check pytorch and sk-learn
+
+```
+
+
+
+Unzip large file
+
+```shell
+cd animal_plant/
+cat best_random_forest_model_5.z* > best_random_forest_model_5_total.zip
+unzip best_random_forest_model_5_total.zip
+md5sum best_random_forest_model_5.joblib  # md5: f0708dbf083fb27145d7e7f06b8d4d06
+cd ..
+
+```
+
+
+
+## Usage
+
+Dataset Processing
+
+```shell
+cd animal_plant_dataset/
+python one-hot.py
+cd ../families_20_dataset/
+python one-hot.py 
+python one-hot-set.py 
+python making_dic.py 
+python family_filter.py 
+python dataset_split.py 
+cd ..
+
+```
+
+
+
+miRNA Families Classification Model training
+
+```shell
+cd families_20/
+python d_tree.py
+python cnn_train_families.py
+python cnn_test.py
+python nn_train_families.py
+python nn_test.py
+python rf2.py  # It may take a lot of time. You can adjust the threads in the code manually (Default 20 threads).
+python SVM_4.py
+cd ..
+
+```
+
+
+
+Binary Classification Model training
+
+```shell
+cd animal_plant/
+python cnn_train.py
+python cnn_test.py
+python nn_train.py
+python nn_test.py
+python d_tree.py  # It may take a lot of time. You can adjust the threads in the code manually (Default 20 threads).
+python rf2.py  # It may take a lot of time. You can adjust the threads in the code manually (Default 20 threads).
+python SVM_4.py  # It may take a lot of time. You can adjust the threads in the code manually (Default 20 threads).
+cd ..
+
+```
+
+
+
+Analyze Random Forest Model
+
+```shell
+cd explaination/
+python svm_hyperplane_function.py
+python random_forests.py 
+bash make_svg.sh
+
+```
+
+
+
+## Contact
+
+Main developer: Yihong Luo
+
+> E-mail: luoyihong2001@163.com
+
+
+
