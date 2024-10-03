@@ -40,7 +40,7 @@ print("Processing data...")
 X_train, y_train = load_data_v3(train_file_path)
 X_test, y_test = load_data_v3(test_file_path)
 
-param_grid = {'kernel': ['linear'],
+param_grid = {'kernel': ['linear', 'sigmoid'],
               'C': [100]}
 
 print("Initialize the Decision Tree classifier...")
