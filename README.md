@@ -249,13 +249,21 @@ miRNA Families Classification Model training
 cd bin/families_20/
 python d_tree.py
 python cnn_train_families.py
-python cnn_test_families.py
+python cnn_test_families.py > ../../models_results/families_20/cnn_result.txt
 python nn_train_families.py
-python nn_test_families.py
+python nn_test_families.py > ../../models_results/families_20/nn_result.txt
 python rf2.py  # It may take a lot of time. You can adjust the threads in the code manually (Default 20 threads).
 python SVM_4.py
 cd ../..
 
+```
+
+
+
+View miRNA Families Classification results
+
+```shell
+cat models_results/families_20/*txt
 ```
 
 
@@ -265,14 +273,22 @@ Binary Classification Model training
 ```shell
 cd bin/animal_plant/
 python cnn_train.py
-python cnn_test.py
+python cnn_test.py > ../../models_results/animal_plant/cnn_result.txt
 python nn_train.py
-python nn_test.py
+python nn_test.py > ../../models_results/animal_plant/nn_result.txt
 python d_tree.py  # It may take a lot of time. You can adjust the threads in the code manually (Default 20 threads).
 python rf2.py  # It may take a lot of time. You can adjust the threads in the code manually (Default 20 threads).
 python SVM_4.py  # It may take a lot of time. You can adjust the threads in the code manually (Default 20 threads).
 cd ../..
 
+```
+
+
+
+View Binary Classification results
+
+```shell
+cat models_results/animal_plant/*txt
 ```
 
 
