@@ -1,0 +1,12 @@
+Best Hyperparameters:
+{'criterion': 'gini', 'max_depth': 30, 'min_impurity_decrease': 0.01, 'min_samples_leaf': 2}
+
+Test Set Classification Report:
+              precision    recall  f1-score   support
+
+           0    0.86655   0.84831   0.85733      7601
+           1    0.84918   0.86733   0.85816      7485
+
+    accuracy                        0.85775     15086
+   macro avg    0.85787   0.85782   0.85775     15086
+weighted avg    0.85793   0.85775   0.85774     15086
