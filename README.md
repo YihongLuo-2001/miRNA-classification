@@ -1,16 +1,16 @@
 # README
 
-> We have run the model on CentOS Linux release 7.9.2009
+> We have run the model on CentOS Linux release 7.9.2009.
 
 ## Table of Contents
 - [Introduction](#introduction)
 - [Project Structure](#project-structure)
-- [Environment Installation](#environment-installation)
+- [Environment](#environment)
 - [Usage](#usage)
 - [Contact](#contact)
 ## Introduction
 
-This sites provide the information associated with the following paper: 
+This site provides the information associated with the following paper: 
 
 > Comparison of five machine learning models on the effectiveness of plant and animal miRNA classification
 
@@ -93,7 +93,7 @@ miRNA-classification/
 
 
 
-## Environment Installation
+## Environment
 
 Create a conda environment
 
