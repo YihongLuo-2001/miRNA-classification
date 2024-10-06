@@ -16,8 +16,6 @@ This site provides the information associated with the following paper:
 
 
 
-
-
 ## Project Structure
 
 ```shell
