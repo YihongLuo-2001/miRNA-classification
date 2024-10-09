@@ -188,7 +188,7 @@ git clone https://github.com/YihongLuo-2001/miRNA-classification.git
 # It may take a lot of time. You can also download it manually
 
 ```
- Manually download (If "Git clone" not work)
+ Manually download (If "Git clone" doesn't work)
 
 ```shell
 wget https://github.com/YihongLuo-2001/miRNA-classification/archive/refs/heads/main.zip
