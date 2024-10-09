@@ -171,8 +171,8 @@ Install PyTorch according to the CUDA version
 > Visit the URL 'https://download.pytorch.org/whl/torch_stable.html' to find the appropriate package.
 
 ```shell
-# pip install torch==X.XX.x+cuXXX -f https://download.pytorch.org/whl/torch_stable.html
-# pip install torchvision==X.XX.x+cuXXX -f https://download.pytorch.org/whl/torch_stable.html
+# pip install torch==X.XX.X+cuXXX -f https://download.pytorch.org/whl/torch_stable.html
+# pip install torchvision==X.XX.X+cuXXX -f https://download.pytorch.org/whl/torch_stable.html
 # e.g. If your CUDA version ≥ 11.3, you can execute the following command line.
 pip install torch==1.12.1+cu113 -f https://download.pytorch.org/whl/torch_stable.html
 pip install torchvision==0.13.1+cu113 -f https://download.pytorch.org/whl/torch_stable.html
