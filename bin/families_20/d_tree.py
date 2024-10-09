@@ -63,13 +63,11 @@ print("Cross-validation completed! ")
 print("Use the optimal hyperparameters for prediction...")
 best_model = grid_search.best_estimator_
 print('Best model: ', best_model)
-# Training model with the optimal hyperparameters for prediction.
-print("Training Decision Tree...")
-dt_classifier.fit(X_train, y_train)
+
 print("Training completed!")
 
 print("Testing...")
-y_pred_test = dt_classifier.predict(X_test)
+y_pred_test = best_model.predict(X_test)
 
 # Evaluate the model and write the results to a file.
 with open(output_file_path, 'w') as f:
