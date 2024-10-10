@@ -231,7 +231,7 @@ Dataset Processing
 
 ```shell
 cd bin/data_processing/
-python python binary_one-hot.py
+python binary_one-hot.py
 python families_one-hot.py 
 python families_filter_0.py
 python families_making_dic.py 
