@@ -64,8 +64,11 @@ print("Use the optimal hyperparameters for prediction...")
 best_model = grid_search.best_estimator_
 print('Best model: ', best_model)
 
+print("Training Decision Tree with the optimal hyperparameters...")
+best_model.fit(X_train, y_train)
 print("Training completed!")
 
+# Training model with the optimal hyperparameters for prediction.
 print("Testing...")
 y_pred_test = best_model.predict(X_test)
 

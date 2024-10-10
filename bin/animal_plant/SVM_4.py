@@ -43,7 +43,7 @@ X_test, y_test = load_data_v3(test_file_path)
 param_grid = {'kernel': ['linear', 'sigmoid'],
               'C': [100]}
 
-print("Initialize the Decision Tree classifier...")
+print("Initialize the Support Vector Machine classifier...")
 svm_model = SVC()
 # Create a GridSearchCV instance.
 print("Start cross-validation to find the optimal hyperparameters...")
@@ -60,6 +60,9 @@ print("Use the optimal hyperparameters for prediction...")
 best_model = grid_search.best_estimator_
 print('Best model: ', best_model)
 
+# Training model with the optimal hyperparameters for prediction.
+print("Training Support Vector Machine with the optimal hyperparameters...")
+best_model.fit(X_train, y_train)
 print("Training completed!")
 
 print("Testing...")

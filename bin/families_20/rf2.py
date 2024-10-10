@@ -60,10 +60,16 @@ grid_search = GridSearchCV(estimator=rf_classifier, param_grid=param_grid, cv=5,
 grid_search.fit(np.array(X_train).reshape(len(X_train), -1), y_train)
 print("Cross-validation completed! ")
 
-# Use the model with the optimal hyperparameters for prediction.
 print("Use the optimal hyperparameters for prediction...")
 best_model = grid_search.best_estimator_
 print('Best model: ', best_model)
+
+# Training model with the optimal hyperparameters for prediction.
+print("Training Random Forest with the optimal hyperparameters...")
+best_model.fit(X_train, y_train)
+print("Training completed!")
+
+# Use the model with the optimal hyperparameters for prediction.
 y_pred_test = best_model.predict(np.array(X_test).reshape(len(X_test), -1))
 
 # Evaluate the model and write the results to a file.
