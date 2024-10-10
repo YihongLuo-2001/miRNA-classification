@@ -44,7 +44,7 @@ param_grid = {'kernel': ['linear', 'poly', 'rbf', 'sigmoid'],
               'C': [0.5, 1, 5, 10]}
 
 print("Initialize the Support Vector Machine classifier...")
-svm_model = SVC()
+svm_model = SVC(random_state=42)
 # Create a GridSearchCV instance.
 print("Start cross-validation to find the optimal hyperparameters...")
 grid_search = GridSearchCV(estimator=svm_model, param_grid=param_grid, cv=5, verbose=3)

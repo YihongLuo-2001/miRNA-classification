@@ -48,7 +48,7 @@ param_grid = {
 }
 
 print("Initialize the Random Forest classifier...")
-rf_classifier = RandomForestClassifier()
+rf_classifier = RandomForestClassifier(random_state=42)
 
 # Create a GridSearchCV instance.
 print("Start cross-validation to find the optimal hyperparameters...")

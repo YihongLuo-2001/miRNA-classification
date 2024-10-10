@@ -50,7 +50,7 @@ param_grid = {
 }
 
 print("Initialize the Decision Tree classifier...")
-dt_classifier = DecisionTreeClassifier()
+dt_classifier = DecisionTreeClassifier(random_state=42)
 # Create a GridSearchCV instance.
 print("Start cross-validation to find the optimal hyperparameters...")
 grid_search = GridSearchCV(estimator=dt_classifier, param_grid=param_grid, cv=5, verbose=3)
