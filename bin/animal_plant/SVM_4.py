@@ -41,7 +41,7 @@ X_train, y_train = load_data_v3(train_file_path)
 X_test, y_test = load_data_v3(test_file_path)
 
 param_grid = {'kernel': ['linear', 'sigmoid'],
-              'C': [100]}
+              'C': [0.1, 0.5, 1]}
 
 print("Initialize the Support Vector Machine classifier...")
 svm_model = SVC()

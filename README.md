@@ -278,7 +278,7 @@ python nn_train.py
 python nn_test.py > ../../models_results/animal_plant/nn_result.txt
 python d_tree.py  # You can adjust the threads in the code manually (Default 20 threads).
 python rf2.py  # You can adjust the threads in the code manually (Default 20 threads).
-python SVM_4.py  # It may take a lot of time (About 1-2 days). You can adjust the threads in the code manually (Default 20 threads).
+python SVM_4.py  # It may take a lot of time (About 2-4 days). You can adjust the threads in the code manually (Default 20 threads).
 cd ../..
 
 ```
