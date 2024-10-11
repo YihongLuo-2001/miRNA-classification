@@ -43,8 +43,8 @@ X_test, y_test = load_data_v3(test_file_path)
 
 param_grid = {
     # 'n_estimators': [1000, 1500, 2000],
-    'min_impurity_decrease': [0.01, 0.1, 0.2, 0.5],
-    'min_samples_leaf': [2, 5, 10],
+    'min_impurity_decrease': [0, 0.01, 0.1, 0.2, 0.5],
+    'min_samples_leaf': [1, 2, 5, 10],
     'max_depth': [30, 60, 100, None],
     'criterion': ['gini', 'entropy']
 }
