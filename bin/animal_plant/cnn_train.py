@@ -6,6 +6,8 @@ import torch.nn as nn
 from torch.utils.data import DataLoader, random_split, Dataset
 import time
 
+# Ensure deterministic behavior in PyTorch
+torch.backends.cudnn.deterministic = True
 torch.manual_seed(0)
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 # Define hyperparameters.
