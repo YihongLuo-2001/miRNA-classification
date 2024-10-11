@@ -1,0 +1,14 @@
+train = Accuracy: 100.0%
+Confusion Matrix:
+[[30209     0]
+ [    0 30136]]
+Precision: 1.0
+Recall: 1.0
+F1 Score: 1.0
+test = Accuracy: 91.19050775553494%
+Confusion Matrix:
+[[6913  688]
+ [ 641 6844]]
+Precision: 0.9119252904061639
+Recall: 0.9119050775553493
+F1 Score: 0.9119063328876532
