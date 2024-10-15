@@ -82,6 +82,7 @@ miRNA-classification/
 │   │   ├── svm_model_6.joblib  # Support Vector Machine(SVM) Model file
 │   │   └── SVM_report_6.txt  # Support Vector Machine(SVM) Model testing results
 │   ├── explanation  # models and results(Analyze Random Forest Model)
+│   │   ├── hyperplane.txt  # Hyperplane function of the SVM model
 │   │   ├── position.tsv  # Sum the feature importance of all decision criteria.
 │   │   ├── trees_dot/  # dot files of the Random Forest model 
 │   │   ├── trees_svg/  # Visualized SVG file
@@ -308,7 +309,8 @@ Analyze Random Forest Model
 
 ```shell
 cd bin/explanation/
-python svm_hyperplane_function.py
+python svm_hyperplane_function.py > ../../models_results/explanation/hyperplane.txt
+cat ../../models_results/explanation/hyperplane.txt
 python random_forests.py 
 bash make_svg.sh
 cd ../../models_results/explanation/trees_svg/  # Svg files
