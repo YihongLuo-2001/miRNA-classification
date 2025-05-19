@@ -105,12 +105,12 @@ def test(model, test_dataset):
         print(f'F1 Score: {f1}')
 
 
-train_dataset = RNA('../../data/animal_plant_dataset/rna_train.txt', transform=ToTensor())
-test_dataset = RNA('../../data/animal_plant_dataset/rna_test.txt', transform=ToTensor())
-train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True, generator=torch.manual_seed(0))
+# train_dataset = RNA('../../data/test/miR_T.txt', transform=ToTensor())
+test_dataset = RNA('../../data/test/miR_T.txt', transform=ToTensor())
+# train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True, generator=torch.manual_seed(0))
 model = torch.load('../../models_results/animal_plant/model_nn.pkl').to(device)
 
-print('train = ', end='')
-test(model, train_dataset)
+# print('train = ', end='')
+# test(model, train_dataset)
 print('test = ', end='')
 test(model, test_dataset)
