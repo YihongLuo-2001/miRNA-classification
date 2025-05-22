@@ -16,8 +16,8 @@ dic_keys = ls[0]
 dic_ls = []
 for i in ls[1:]:
     dic_ls.append({dic_keys[num]: item for num, item in enumerate(i)})
-seqs = [(i['Query'], i['Sequence'].split('&')[0].replace('-', '')) for i in dic_ls if
-        float(i['DegradomePval']) < 0.05 and i['DegradomeCategory'] == '0']
+seqs = [(i['Query'], i['Sequence'].split('&')[1].replace('-', '')) for i in dic_ls if
+        float(i['DegradomePval']) < 0.05 and i['DegradomeCategory'] in  ['0', '1']]
 seqs = [i for i in seqs if len(i[-1]) < 35]
 
 with open(path_0) as f:
@@ -26,7 +26,7 @@ dic_keys_0 = ls_0[0]
 dic_ls_0 = []
 for i in ls_0[1:]:
     dic_ls_0.append({dic_keys_0[num]: item for num, item in enumerate(i)})
-seqs_0 = [(i['Query'], i['Sequence'].split('&')[0].replace('-', '')) for i in dic_ls_0]
+seqs_0 = [(i['Query'], i['Sequence'].split('&')[1].replace('-', '')) for i in dic_ls_0]
 seqs_0 = [i for i in seqs_0 if len(i[-1]) < 35]
 a = set(seqs)
 all_seq = set(seqs_0)

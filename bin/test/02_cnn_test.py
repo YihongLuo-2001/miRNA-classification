@@ -116,7 +116,7 @@ def test(model, test_dataset):
 # train_dataset = RNA('../../data/test/miR_T.txt', transform=ToTensor())
 test_dataset = RNA('../../data/test/miR_T.txt', transform=ToTensor())
 # train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True, generator=torch.manual_seed(0))
-model = torch.load('../../models_results/animal_plant/model_cnn.pkl').to(device)
+model = torch.load('../../models_results/animal_plant/model_cnn.pkl', weights_only = False).to(device)
 
 # print('train = ', end='')
 # test(model, train_dataset)
