@@ -44,7 +44,7 @@ param_grid = {
     'n_estimators': [20, 200, 2000],
     'max_features': ['sqrt', 'log2', None],
     'max_depth': [10, 30, 40, None],
-    'criterion': ['gini', 'entropy']
+    'criterion': ['gini', 'entropy', 'mse']
 }
 
 print("Initialize the Random Forest classifier...")
