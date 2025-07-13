@@ -108,7 +108,7 @@ def test(model, test_dataset):
 train_dataset = RNA('../../data/animal_plant_dataset/rna_train.txt', transform=ToTensor())
 test_dataset = RNA('../../data/animal_plant_dataset/rna_test.txt', transform=ToTensor())
 train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True, generator=torch.manual_seed(0))
-model = torch.load('../../models_results/animal_plant/model_nn.pkl').to(device)
+model = torch.load('../../models_results/animal_plant/model_nn.pkl', weights_only=False).to(device)
 
 print('train = ', end='')
 test(model, train_dataset)

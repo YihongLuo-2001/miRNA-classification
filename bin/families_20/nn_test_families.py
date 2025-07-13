@@ -108,7 +108,7 @@ def test(model, test_dataset):
 train_dataset = RNA('../../data/families_20_dataset/set_train_families-filtered.txt', transform=ToTensor())
 test_dataset = RNA('../../data/families_20_dataset/set_test_families-filtered.txt', transform=ToTensor())
 train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True, generator=torch.manual_seed(0))
-model = torch.load('../../models_results/families_20/model_nn_families.pkl').to(device)
+model = torch.load('../../models_results/families_20/model_nn_families.pkl', weights_only=False).to(device)
 
 print('train = ', end='')
 test(model, train_dataset)

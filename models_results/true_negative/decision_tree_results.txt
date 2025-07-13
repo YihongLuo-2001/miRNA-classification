@@ -1,0 +1,12 @@
+Best Hyperparameters:
+{'criterion': 'entropy', 'max_depth': 40, 'min_impurity_decrease': 0, 'min_samples_leaf': 2}
+
+Test Set Classification Report:
+              precision    recall  f1-score   support
+
+           0    0.75378   0.74001   0.74683     15166
+           1    0.74200   0.75570   0.74879     15006
+
+    accuracy                        0.74781     30172
+   macro avg    0.74789   0.74785   0.74781     30172
+weighted avg    0.74792   0.74781   0.74780     30172

@@ -34,7 +34,7 @@ def load_data_v3(file_path):
 train_file_path = '../../data/true_negative/True-Negative-train.txt'
 test_file_path = '../../data/true_negative/True-Negative-test.txt'
 output_file_path = '../../models_results/true_negative/random_forest_results.txt'
-model_file_path = '../../models_results/true_negative//best_random_forest_model_5.joblib'
+model_file_path = '../../models_results/true_negative/best_random_forest_model_5.joblib'
 
 print("Processing data...")
 X_train, y_train = load_data_v3(train_file_path)
