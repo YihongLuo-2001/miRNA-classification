@@ -1,0 +1,12 @@
+Best Hyperparameters:
+{'C': 5, 'kernel': 'rbf'}
+
+Test Set Classification Report:
+              precision    recall  f1-score   support
+
+           0    0.83108   0.86549   0.84793     15166
+           1    0.85812   0.82220   0.83978     15006
+
+    accuracy                        0.84396     30172
+   macro avg    0.84460   0.84385   0.84385     30172
+weighted avg    0.84452   0.84396   0.84388     30172
