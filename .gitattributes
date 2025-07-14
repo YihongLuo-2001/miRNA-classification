@@ -5,3 +5,4 @@ models_results/true_negative/best_random_forest_model_5.tar.xad filter=lfs diff=
 models_results/true_negative/best_random_forest_model_5.tar.xae filter=lfs diff=lfs merge=lfs -text
 models_results/true_negative/best_random_forest_model_5.tar.xaf filter=lfs diff=lfs merge=lfs -text
 models_results/true_negative/best_random_forest_model_5.tar.xaa filter=lfs diff=lfs merge=lfs -text
+models_results/true_negative/svm_model_6.joblib filter=lfs diff=lfs merge=lfs -text
