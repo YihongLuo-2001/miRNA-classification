@@ -111,7 +111,7 @@ if __name__ == "__main__":
     plt.ylim([-0.01, 1.01])
     plt.xlabel('False Positive Rate')
     plt.ylabel('True Positive Rate')
-    plt.title('Receiver Operating Characteristic (ROC)')
+    plt.title('RF model Receiver Operating Characteristic (ROC)')
     plt.legend(loc='lower right')
     plt.grid(alpha=0.3)
     plt.savefig(output_file_path, dpi=600)
