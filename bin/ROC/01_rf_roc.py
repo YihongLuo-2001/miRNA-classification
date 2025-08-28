@@ -76,7 +76,7 @@ if __name__ == "__main__":
     # Path
     train_file_path = '../../data/animal_plant_dataset/rna_train.txt'
     test_file_path = '../../data/animal_plant_dataset/rna_test.txt'
-    output_file_path = '../../models_results/animal_plant/random_forest_results_detail.tsv'
+    output_file_path = '../../models_results/ROC/random_forest_roc.png'
     model_file_path = '../../models_results/animal_plant/best_random_forest_model_5.joblib'
 
     model = joblib.load(model_file_path)
@@ -114,5 +114,6 @@ if __name__ == "__main__":
     plt.title('Receiver Operating Characteristic (ROC)')
     plt.legend(loc='lower right')
     plt.grid(alpha=0.3)
-    plt.show()
+    plt.savefig(output_file_path, dpi=600)
+    plt.close()
 
