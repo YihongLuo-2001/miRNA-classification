@@ -104,13 +104,12 @@ print("TPR:", tpr)
 print("Thresholds:", thresholds)
 print(f"AUC = {roc_auc:.4f}")
 
-# 找最佳阈值（Youden index: maximize TPR - FPR）
+# Youden index: maximize TPR - FPR
 youden_index = tpr - fpr
 best_idx = np.argmax(youden_index)
 best_threshold = thresholds[best_idx]
 print(f"Best threshold (Youden): {best_threshold:.4f}, TPR={tpr[best_idx]:.3f}, FPR={fpr[best_idx]:.3f}")
 
-# 画 ROC 曲线
 plt.figure(figsize=(6, 6))
 plt.plot(fpr, tpr, lw=2, label=f"ROC curve (AUC = {roc_auc:.3f})")
 plt.plot([0, 1], [0, 1], linestyle='--', lw=1, label='Random')
