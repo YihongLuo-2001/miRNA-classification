@@ -1,12 +1,12 @@
 Best Hyperparameters:
-{'C': 1, 'kernel': 'linear'}
+{'C': 10, 'kernel': 'rbf'}
 
 Test Set Classification Report:
               precision    recall  f1-score   support
 
-           0    0.77114   0.74517   0.75793      7601
-           1    0.74977   0.77542   0.76238      7485
+           0    0.91754   0.91199   0.91475      7601
+           1    0.91117   0.91677   0.91396      7485
 
-    accuracy                        0.76017     15086
-   macro avg    0.76046   0.76029   0.76015     15086
-weighted avg    0.76054   0.76017   0.76014     15086
+    accuracy                        0.91436     15086
+   macro avg    0.91435   0.91438   0.91436     15086
+weighted avg    0.91438   0.91436   0.91436     15086
