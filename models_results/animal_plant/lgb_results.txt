@@ -1,12 +1,12 @@
 Best Hyperparameters:
-{'colsample_bytree': 1.0, 'learning_rate': 0.2, 'max_depth': 20, 'num_leaves': 1000, 'subsample': 0.8}
+{'colsample_bytree': 0.8, 'learning_rate': 0.5, 'max_depth': 30, 'num_leaves': 2000, 'subsample': 0.8}
 
 Test Set Classification Report:
               precision    recall  f1-score   support
 
-           0    0.90502   0.92014   0.91252      7601
-           1    0.91750   0.90194   0.90965      7485
+           0    0.90525   0.92264   0.91386      7601
+           1    0.91988   0.90194   0.91082      7485
 
-    accuracy                        0.91111     15086
-   macro avg    0.91126   0.91104   0.91109     15086
-weighted avg    0.91121   0.91111   0.91110     15086
+    accuracy                        0.91237     15086
+   macro avg    0.91257   0.91229   0.91234     15086
+weighted avg    0.91251   0.91237   0.91235     15086
